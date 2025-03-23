@@ -30,10 +30,10 @@ The Testing folder contains notebooks for testing connections to language models
 The movie data can be downloaded from [IMDB datasets](https://datasets.imdbws.com/) and processed using the notebooks in the Explore folder. Sample databases are included in the repository.
 
 ## Requirements
-Python 3.8+
-OpenAI API key (for embeddings and language models)
-Libraries: LangChain, ChromaDB, and others specified in the notebooks
-Environment variables set in a .env file
+* Python 3.8+
+* OpenAI API key (for embeddings and language models)
+* Libraries: LangChain, ChromaDB, and others specified in the notebooks
+* Environment variables set in a .env file
 
 ## Usage
 1. Set up your environment with the required API keys
