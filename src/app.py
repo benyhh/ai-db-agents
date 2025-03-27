@@ -20,12 +20,14 @@ from langchain_community.agent_toolkits import create_sql_agent
 from langchain_openai import ChatOpenAI
 from langchain.callbacks.streamlit import StreamlitCallbackHandler
 from langchain_community.callbacks.manager import get_openai_callback
+from langchain_community.agent_toolkits import create_sql_agent
 # Import for direct SQL query approach
 from langchain.chains import create_sql_query_chain
 from langchain_community.tools.sql_database.tool import QuerySQLDataBaseTool
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from pyprojroot import here
+
 
 # Load environment variables
 load_dotenv(here(".env"))
@@ -60,6 +62,7 @@ def get_sql_agent():
 def get_sql_chain():
     # Create a chain that writes SQL queries
     write_query_chain = create_sql_query_chain(langchain_llm, sql_db)
+    # agent_executor = create_sql_agent(llm, db=db, agent_type="openai-tools", verbose=True)
     
     # Create a tool that executes SQL queries
     execute_query_tool = QuerySQLDataBaseTool(db=sql_db)
